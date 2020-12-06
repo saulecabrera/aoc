@@ -7,8 +7,16 @@ module Parsing
   , symbol
   , dash
   , colon
+  , dot
+  , hash
   , char
+  , sepBy
+  , eol
+  , eof
+  , choice
   , integer
+  , many
+  , manyTill
   , charseq
   , lowerChar
   , Parsing.parse
@@ -39,6 +47,12 @@ dash = symbol "-"
 
 colon :: Parser T.Text
 colon = symbol ":"
+
+hash :: Parser Char
+hash = char '#'
+
+dot :: Parser Char
+dot = char '.'
 
 integer :: Parser Int
 integer = lexeme L.decimal
